@@ -3,11 +3,13 @@ import Button from 'react-bootstrap/Button';
 import cv1 from "./cv1.png";
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import Sign from './Sign';
 const Template = (props) => {
   const navigate = useNavigate();
-  const x= false;
+  const myData = localStorage.getItem('myName');
   const validation=()=>{
-    x?navigate("/"): alert("please login");
+    myData.length===0?navigate("/Sign"): navigate("/Form");
     
   }
  
@@ -25,15 +27,16 @@ const Template = (props) => {
         </div>
         <div className="temp-pic1">
           <div className="cv">
-          <img src="https://i.pinimg.com/originals/d0/3f/08/d03f08807280eb77c093fc278215fc39.jpg" height="350px" width="100%"/>
+         
+          <img src="https://i.pinimg.com/originals/d0/3f/08/d03f08807280eb77c093fc278215fc39.jpg" height="350px" width="100%" onClick={validation}/>
+          
+          </div>
+          <div className="cv">
+          <img src="https://i.pinimg.com/originals/d0/3f/08/d03f08807280eb77c093fc278215fc39.jpg" height="350px" width="100%" onClick={validation}/>
 
           </div>
           <div className="cv">
-          <img src="https://i.pinimg.com/originals/d0/3f/08/d03f08807280eb77c093fc278215fc39.jpg" height="350px" width="100%"/>
-
-          </div>
-          <div className="cv">
-          <img src="https://i.pinimg.com/originals/d0/3f/08/d03f08807280eb77c093fc278215fc39.jpg" height="350px" width="100%"/>
+          <img src="https://i.pinimg.com/originals/d0/3f/08/d03f08807280eb77c093fc278215fc39.jpg" height="350px" width="100%" onClick={validation}/>
 
           </div>
           
