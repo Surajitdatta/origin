@@ -20,7 +20,7 @@
 //   )
 // }
 
-// export default Form;
+// export default Form;;;
 const Form=(props) =>{
   const myData = localStorage.getItem('myName');
  
